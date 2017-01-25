@@ -1,0 +1,28 @@
+{% extends "::fight/master.html.twig" %}
+
+{% block main %}
+    <div class="page-header">
+        <h1>Select your fighters</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Player 1</h2>
+            <div class="fighter-list">
+                {% for fighter in fighters %}
+                    <div class="col-sm-3 fighter-list__item">
+                        <div>
+                            <h3>{{ fighter }}</h3>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Player 2</h2>
+        </div>
+    </div>
+{% endblock %}
