@@ -27,12 +27,13 @@ class Fighter
 
     /**
      * @ORM\Column(type="boolean")
-     * @Assert\IsTrue()
+     * @Assert\Choice({1,"1",true,0,"0",false})
      */
     private $active;
 
     /**
      * @ORM\Column(type="datetime", name="created_at")
+     * @Assert\NotBlank()
      * @Assert\DateTime()
      */
     private $createdAt;
