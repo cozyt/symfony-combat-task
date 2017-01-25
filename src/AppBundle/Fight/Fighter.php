@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace AppBundle\Fight;
 
@@ -46,7 +46,7 @@ class Fighter
 
     /**
      * Type of fighter
-     * @var string
+     * @var FighterType
      */
     private $type = '';
 
@@ -90,7 +90,6 @@ class Fighter
      * Initiates the fighter
      *
      * @param string $fighter Name of the fighter
-     * @return object AppBundle\Fight\Fighter
      */
     public function __construct($fighter)
     {
@@ -107,6 +106,8 @@ class Fighter
     /**
      * Handles requests for out of scope properties
      *
+     * @param string $property
+     * @throws \Exception
      * @return mixed
      */
     public function __get($property)
@@ -150,7 +151,7 @@ class Fighter
         if (self::isValid($name)) {
             $this->name = $name;
         }
-        
+
         return $this;
     }
 
@@ -187,7 +188,7 @@ class Fighter
      * Current fighter inflicts damage on a parsed opponent
      *
      * @param object $opponent AppBundle\Fight\Fighter
-     * @return array
+     * @return object
      */
     public function attack($opponent)
     {
@@ -238,7 +239,7 @@ class Fighter
      *
      * @param object $opponent AppBundle\Fight\Fighter
      * @param boolean $defended
-     * @return object AppBundle\Fight\Fighter
+     * @return boolean
      */
     public function specialSkillLuckyStrike($opponent, $defended=false)
     {
@@ -336,6 +337,7 @@ class Fighter
     /**
      * Sets the stunned property
      *
+     * @param boolean $val
      * @return object AppBundle\Fight\Fighter
      */
     public function setStunned($val=true)

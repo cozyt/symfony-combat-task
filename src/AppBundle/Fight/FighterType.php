@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace AppBundle\Fight;
 
@@ -48,7 +48,6 @@ class FighterType
      * Initiates the fighter type
      *
      * @param string $type Name of the type
-     * @return object AppBundle\Fighter\FighterType
      */
     public function __construct($type)
     {
@@ -58,6 +57,8 @@ class FighterType
     /**
      * Handles requests for out of scope properties
      *
+     * @param string $property
+     * @throws \Exception
      * @return mixed
      */
     public function __get($property)
@@ -139,7 +140,7 @@ class FighterType
             return (object) $items[$this->name];
         }
 
-        return;
+        return null;
     }
 
     /**
@@ -179,7 +180,7 @@ class FighterType
     /**
      * Returns the special skill for the fighter type
      *
-     * @return ...
+     * @return string
      */
     public function getSpecialSkill()
     {
