@@ -27,7 +27,7 @@ class FightController extends Controller
     {
         $fighters = Fighter::list();
 
-        return $this->render('fight/fighters.html.twig', [
+        return $this->render('AppBundle:Fight:fighters.html.twig', [
             'fighters' => $fighters,
         ]);
     }
